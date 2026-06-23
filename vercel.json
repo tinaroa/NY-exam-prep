@@ -1,29 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="NY Real Estate Exam Prep — 200 practice questions, 50 flashcards, and 10 study modules for the New York salesperson and broker exams." />
-    <meta name="theme-color" content="#0F0F0F" />
-
-    <!-- Open Graph (for Instagram / social sharing) -->
-    <meta property="og:title" content="NY Real Estate Exam Prep" />
-    <meta property="og:description" content="Pass the NY real estate exam the first time. 200 questions, 50 flashcards, expert strategy tips." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/og-image.png" />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-    <!-- Mobile home screen -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="NY RE Prep" />
-
-    <title>NY Real Estate Exam Prep</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
