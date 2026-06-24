@@ -1,117 +1,17 @@
-# NY Real Estate Exam Prep — Deployment Guide
-
-## Access Code
-**PASSNY2025** — change this in `src/App.jsx` line 3 before deploying.
-
----
-
-## Deploy to Vercel (Free — ~15 minutes)
-
-### Step 1: Create a GitHub account (if you don't have one)
-- Go to github.com → Sign up (free)
-
-### Step 2: Create a new GitHub repository
-1. Click the **+** button → New repository
-2. Name it: `ny-exam-prep`
-3. Set to **Private** (keeps your code protected)
-4. Click **Create repository**
-
-### Step 3: Upload your files
-GitHub will show you an upload option. Upload this entire folder:
-```
-ny-exam-prep/
-├── index.html
-├── package.json
-├── vite.config.js
-├── vercel.json
-├── .gitignore
-├── public/
-│   └── favicon.svg
-└── src/
-    ├── main.jsx
-    └── App.jsx
-```
-
-### Step 4: Deploy on Vercel
-1. Go to vercel.com → Sign up with your GitHub account
-2. Click **Add New Project**
-3. Import your `ny-exam-prep` repository
-4. Vercel auto-detects Vite/React — no settings to change
-5. Click **Deploy**
-6. In ~60 seconds you'll have a live URL like: `ny-exam-prep.vercel.app`
-
-### Step 5: Connect a custom domain (optional, ~$12/year)
-- Buy a domain at namecheap.com or Google Domains (e.g., `nyreexamprep.com`)
-- In Vercel → Settings → Domains → Add your domain
-- Follow Vercel's DNS instructions (copy-paste two records)
-- Live on your domain in 10–30 minutes
-
----
-
-## Set Up Stripe Payment Link (30 minutes)
-
-### Step 1: Create the product
-1. Log into your Stripe dashboard at dashboard.stripe.com
-2. Go to **Products** → **Add Product**
-3. Name: `NY Real Estate Exam Prep`
-4. Price: `$37.00` — One time
-5. Description: *Pass the NY salesperson or broker exam the first time. 200 practice questions, 50 flashcards, and 10 study modules built on exam-tested strategies.*
-6. Click **Save**
-
-### Step 2: Create a Payment Link
-1. On the product page → **Create payment link**
-2. Enable **Collect customer's email address**
-3. Under **After payment** → set confirmation page message:
-   > Thank you! Your access code is: **PASSNY2025**
-   > Visit [YOUR URL] and enter your code to unlock the full course.
-4. Copy your payment link — this is what you share everywhere
-
-### Step 3: Set up confirmation email (optional but recommended)
-In Stripe Dashboard → Settings → Emails:
-- Enable **Successful payment** emails
-- Customize the message to include the access code and your URL
-
----
-
-## Update the Access Code
-
-To change the access code (recommended before launch):
-1. Open `src/App.jsx`
-2. Line 3: `const VALID_CODE = "PASSNY2025";`
-3. Change to any code you want (e.g., `"PASSNY2025"` → `"NYRE2025"`)
-4. Push to GitHub → Vercel auto-redeploys in ~30 seconds
-
----
-
-## Pricing Recommendation
-- **Launch price:** $37 one-time
-- **Early-bird / Instagram promo:** $27 with code (not built into app — just charge $27 via a separate payment link)
-- **Broker upgrade tier (future):** $47 — emphasize broker-specific content
-
----
-
-## Social Media Checklist
-- [ ] Get live URL from Vercel
-- [ ] Test full purchase → email → access flow yourself
-- [ ] Update Instagram bio link
-- [ ] Post launch caption (see social media assets)
-- [ ] Send Substack/newsletter announcement
-- [ ] Post in NY real estate Facebook groups and Reddit (r/RealEstate, r/realtors)
-
----
-
-## Future Updates
-- Change `VALID_CODE` in `App.jsx` and redeploy any time
-- Vercel redeploys automatically when you push changes to GitHub
-- Record retention: Stripe keeps all purchase records; download monthly reports
-
----
-
-## Quick Reference
-| Thing | Where |
-|---|---|
-| Live app URL | Vercel dashboard |
-| Access code | `src/App.jsx` line 3 |
-| Payment link | Stripe dashboard → Payment Links |
-| Purchase records | Stripe dashboard → Payments |
-| Redeploy | Push any change to GitHub |
+{
+  "name": "ny-exam-prep",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.0",
+    "vite": "^5.0.0"
+  }
+}
